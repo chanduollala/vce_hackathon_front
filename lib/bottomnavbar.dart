@@ -73,20 +73,20 @@ class _BottomBarState extends State<BottomBar> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(
-          icon: Icon(Icons.wallet_outlined),
-          label: 'Money',
+          icon: Icon(Icons.health_and_safety),
+          label: 'Insurance',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.explore),
-          label: 'Journey',
+          label: 'Diagnosis',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.emergency),
-          label: 'Emergency',
+          icon: Icon(Icons.history),
+          label: 'History',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
-          label: 'Profile',
+          label: 'Account',
         ),
       ],
       currentIndex: widget.selected,

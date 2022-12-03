@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:vce_hackathon_front/screens/appointment.dart';
 
 import '../bottomnavbar.dart';
 
@@ -37,6 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    goToAppointments() {
+      Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const AppointmentsPage(title: "hii")),
+      );
+    }
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -46,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         appBar: AppBar(
             //leading: Icon(Icons.menu),
-            title: Text('Fluck'),
+            title: Text('UniHealth'),
             actions: [
               IconButton(onPressed: () {}, icon: Icon(Icons.notifications)),
               IconButton(onPressed: () {}, icon: Icon(Icons.call)),
@@ -285,243 +294,284 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-        body: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              /*
-            Container(
-              height: 60,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Colors.purple, Colors.blueAccent, Colors.yellow],
-                  begin: Alignment.bottomLeft,
-                  end: Alignment.topRight,
-                  stops: [0.2, 0.5, 0.85],
-                  tileMode: TileMode.repeated,
+        body: SingleChildScrollView(
+          child: Center(
+            // Center is a layout widget. It takes a single child and positions it
+            // in the middle of the parent.
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                /*
+              Container(
+                height: 60,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  gradient: const LinearGradient(
+                    colors: [Colors.purple, Colors.blueAccent, Colors.yellow],
+                    begin: Alignment.bottomLeft,
+                    end: Alignment.topRight,
+                    stops: [0.2, 0.5, 0.85],
+                    tileMode: TileMode.repeated,
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Icon(Icons.location_pin, color: Colors.white,),
+                    Text("You are exploring: ",
+                      style: TextStyle(
+                        fontSize: 20,
+                        color: Colors.white
+                      )
+                    ),
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white70,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10))
+                          )
+                        ),
+                          onPressed: (){},
+                          child: Text("Hyderabad", style: TextStyle(
+                            color: Colors.black
+                          ),)
+                      ),
+                    )
+
+                  ],
                 ),
               ),
-              child: Row(
-                children: [
-                  Icon(Icons.location_pin, color: Colors.white,),
-                  Text("You are exploring: ",
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white
-                    )
-                  ),
-                  Expanded(
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white70,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(10))
-                        )
+
+               */
+                Stack(children: [
+                  Container(
+                    height: 300,
+                    margin: EdgeInsets.only(top: 30 , left: 50),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("images/healthcare.webp"),
+                        fit: BoxFit.cover,
                       ),
-                        onPressed: (){},
-                        child: Text("Hyderabad", style: TextStyle(
-                          color: Colors.black
-                        ),)
+                    ),
+                  ),
+                  Positioned(
+                    child: Container(
+                      height: 300,
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Colors.black, Colors.transparent],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          stops: [0, 0.6],
+                          tileMode: TileMode.repeated,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                      child: Container(
+                          padding: EdgeInsets.only(left: 20, top: 30),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Welcome back,",
+                                style:
+                                    TextStyle(fontSize: 26, color: Colors.white),
+                              ),
+                              Text(
+                                "Chandu",
+                                style: TextStyle(
+                                    fontSize: 42,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+
+                              Text(
+                                "Hope you're doing good :)",
+                                style:
+                                TextStyle(fontSize: 18, color: Colors.white),
+                              ),
+
+                            ],
+                          ))),
+                  /*
+                  Positioned(
+                    bottom: 10,
+                    left: 10,
+                    child: Container(
+                      height: 100,
+                      width: MediaQuery.of(context).size.width-20,
+                      padding: EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.white70,
+                      ),
+                      child: Text("hi"),
+
                     ),
                   )
 
-                ],
-              ),
-            ),
-
-             */
-              Stack(children: [
-                Container(
-                  height: 300,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage("images/charminar.jpg"),
-                      fit: BoxFit.cover,
-                    ),
+                   */
+                ]),
+                Card(
+                  elevation: 30,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)
                   ),
-                ),
-                Positioned(
+                  color: Colors.green[100],
                   child: Container(
-                    height: 300,
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Colors.black, Colors.transparent],
-                        begin: Alignment.topCenter,
-                        end: Alignment.bottomCenter,
-                        stops: [0, 0.6],
-                        tileMode: TileMode.repeated,
-                      ),
-                    ),
-                  ),
-                ),
-                Positioned(
-                    child: Container(
-                        padding: EdgeInsets.only(left: 20, top: 30),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Welcome back,",
-                              style:
-                                  TextStyle(fontSize: 26, color: Colors.white),
-                            ),
-                            Text(
-                              "Chandu",
-                              style: TextStyle(
-                                  fontSize: 42,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-
-                            Text(
-                              "Hope you're doing good :)",
-                              style:
-                              TextStyle(fontSize: 18, color: Colors.white),
-                            ),
-
-                          ],
-                        ))),
-                /*
-                Positioned(
-                  bottom: 10,
-                  left: 10,
-                  child: Container(
-                    height: 100,
-                    width: MediaQuery.of(context).size.width-20,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.white70,
-                    ),
-                    child: Text("hi"),
-
-                  ),
-                )
-
-                 */
-              ]),
-              Card(
-                  child: Container(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(top:20, left: 15, right: 15, bottom: 05),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text("Not feeling well? Consult a doctor",
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                              )),Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 8.0),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                        child: ElevatedButton(
-                                          child: Text("Book an appointment",
-                                          style: TextStyle(
-                                            fontSize: 18
-                                          ),),
-                                          onPressed: (){},
-                                          style: ElevatedButton.styleFrom(
-                                            fixedSize: Size.fromHeight(50)
-                                          ),
-                                        ),
-                                      ),
-                              ],
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-              ),
-              Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Card(
-                  child: Container(
-                    height: 100,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Facing an issue?",
                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            )),
-                        Expanded(
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            color: Colors.white,
-                            elevation: 30,
-                            child: Container(
-                              padding: EdgeInsets.only(left: 15),
-                              height: 50,
-                              child: const TextField(
-                                obscureText: true,
-                                style: TextStyle(fontSize: 20),
-                                decoration: InputDecoration(
-                                    icon: Icon(Icons.search),
-                                    hintText: 'Search for the problem',
-                                    border: InputBorder.none),
+                              fontSize: 20,
+                              fontWeight: FontWeight.normal,
+                            )),Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  icon: Icon(Icons.schedule),
+                                  label: Text("Book an appointment",
+                                    style: TextStyle(
+                                        fontSize: 18
+                                    ),),
+                                  onPressed: (){
+                                    goToAppointments();
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                      fixedSize: Size.fromHeight(50),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(20)
+                                      )
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ),
-              Container(
-                height: 100,
-                width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Card(
+                Card(
+                  elevation: 30,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  color: Colors.green[100],
                   child: Container(
-                    height: 100,
+                    padding: EdgeInsets.only(top:20, left: 15, right: 15, bottom: 05),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text("Facing an issue?",
+                        Text("Have a diagnosis? Choose the best from your insurance plans",
+                            textAlign: TextAlign.center,
                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
-                            )),
-                        Expanded(
-                          child: Card(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            color: Colors.white,
-                            elevation: 30,
-                            child: Container(
-                              padding: EdgeInsets.only(left: 15),
-                              height: 50,
-                              child: const TextField(
-                                obscureText: true,
-                                style: TextStyle(fontSize: 20),
-                                decoration: InputDecoration(
-                                    icon: Icon(Icons.search),
-                                    hintText: 'Search for the problem',
-                                    border: InputBorder.none),
+
+                              fontSize: 20,
+                              fontWeight: FontWeight.normal,
+                            )),Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  icon: Icon(Icons.search),
+                                  label: Text("Search for a diagnosis",
+                                    style: TextStyle(
+                                        fontSize: 18
+                                    ),),
+                                  onPressed: (){},
+                                  style: ElevatedButton.styleFrom(
+                                      fixedSize: Size.fromHeight(50),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(20)
+                                      )
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                ),
+                Card(
+                  elevation: 30,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)
+                  ),
+                  color: Colors.green[100],
+                  child: Container(
+                    padding: EdgeInsets.only(top:20, left: 15, right: 15, bottom: 05),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text("Emergency",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.normal,
+                            )),Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  icon: Icon(Icons.phone),
+                                  label: Text("Call Ambulance",
+                                    style: TextStyle(
+                                        fontSize: 18
+                                    ),),
+                                  onPressed: (){},
+                                  style: ElevatedButton.styleFrom(
+                                      backgroundColor: Colors.red[400 ],
+
+                                      fixedSize: Size.fromHeight(50),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(20)
+                                      )
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: ElevatedButton.icon(
+                                  icon: Icon(Icons.location_pin),
+                                  label: Text("View nearby hospitals",
+                                    style: TextStyle(
+                                        fontSize: 18
+                                    ),),
+                                  onPressed: (){},
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.red[400],
+                                      fixedSize: Size.fromHeight(50),
+                                      shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(20)
+                                      )
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
         floatingActionButton: FloatingActionButton(

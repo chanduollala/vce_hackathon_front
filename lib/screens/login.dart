@@ -76,7 +76,7 @@ class _LoginPageState extends State<LoginPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Image(
-              height: 120,
+              height: 150,
               image: AssetImage('images/fluck-logo.png'),
             ),
             Padding(padding: EdgeInsets.symmetric(vertical: 10)),
