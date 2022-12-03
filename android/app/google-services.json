@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "668926634717",
+    "project_id": "fluck-app",
+    "storage_bucket": "fluck-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668926634717:android:beec070d06065d9466c934",
+        "android_client_info": {
+          "package_name": "com.example.formulae"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668926634717-01pdo14ucchfer4gpdc6k02uqjf7cacj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.formulae",
+            "certificate_hash": "1f1dbee3b9ff95fec47cd10157a3c2dcf417ab4a"
+          }
+        },
+        {
+          "client_id": "668926634717-ioasi463jf40qjrc9ql1vjfoq5094hbl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_tOQZR-8G6jNUkqUDH8FC2LSRKeB0Gk0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668926634717-ioasi463jf40qjrc9ql1vjfoq5094hbl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "668926634717-5r0bsp2fe786fjqu7f7iqojvmmbc0foi.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.formulae"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
